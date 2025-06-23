@@ -1,0 +1,388 @@
+:root {
+  --color-primary: #5C56E1;
+  --color-primary-dark: #5b21b6;
+  --color-accent: #8B5CF6;
+  --color-card: #FFFFFF;
+  --color-input: #F1F1FF;
+  --color-text: #09090E;
+  --color-placeholder: #5C5A87;
+  --color-border: #D4D4ED;
+  --color-gradient: linear-gradient(135deg, #5C56E1, #8B5CF6);
+}
+
+body.dark-theme {
+  --color-card: #1E293B;
+  --color-input: #141B2D;
+  --color-text: #F3F4F6;
+  --color-placeholder: #A3B6DC;
+  --color-border: #334155;
+
+  background: var(--color-card);
+  background-image: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 35%), radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 35%), radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 40%);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins';
+    min-height: 100vh;
+    color:var(--color-text);
+    background: linear-gradient(#E9E9FF,#C8C7FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    padding:2rem;
+    margin:0 auto;
+    background:var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width:50rem;
+    width:95%;
+}
+
+.gradient_bg{
+    color:white;
+    background:var(--color-gradient);
+}
+
+.light_bg{
+    background:var(--color-input);
+}
+
+/* -------------Header--------------- */
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.heading_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:3.4375rem;
+    height:3.4375rem;
+    border-radius: 10px;
+    font-size:1.35rem;
+}
+
+.theme_toggle{
+    width:3.4375rem;
+    height:3.4375rem;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor:pointer;
+    transition: all 0.3s;
+}
+
+.theme_toggle:hover{
+    color:var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.heading_title{
+    color: var(--color-text);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 1.9rem;
+}
+
+/* -----------writting_section---------------- */
+
+.writing_seciton{
+    margin-block: 1rem;
+    position: relative;
+}
+
+.writing_seciton .writting{
+    background-color: var(--color-input);
+    width:100%;
+    border: 1px solid var(--color-border);
+    border-radius:15px;
+    min-height: 8.9375rem;
+    resize: vertical;
+    font-size:1rem;
+    font-family: 'Poppins';
+    transition: all 0.3s ease;
+    color:var(--color-text);
+    padding:1.2rem;
+}
+
+
+.writing_seciton .writting:focus{
+    outline:none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(139,92,246,0.15);
+    border-radius:15px;
+}
+
+
+.writing_seciton .prompt-icon{
+    width: 2.1875rem;
+    height: 2.1875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-gradient);
+    color:white;
+    font-size:1.05rem;
+    border:none;
+    border-radius: 50%;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0.9375rem;
+    right: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.writing_seciton .prompt-icon:hover{
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.generate-section{
+    display:grid;
+    grid-template-columns: 1.15fr 1.15fr 1.15fr 1.15fr;
+    column-gap: 16px;
+    position: relative;
+}
+
+.select-wrapper{
+    position: relative;
+}
+
+.selection{
+    padding: 0.7rem 1.25rem;
+    background:var(--color-input);
+    border: 1px solid var(--color-border);
+    border-radius:10px;
+    width:100%;
+    height: 100%;
+    appearance: none;
+    font-size:0.95rem;
+    transform:all 2s ease;
+    color:var(--color-text);
+}
+
+.select-wrapper::after{
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size:0.9rem;
+    color:var(--color-text);
+    position:absolute;
+    bottom:50%;
+    right:10px;
+    color:var(--color-placeholder); 
+    transform:translateY(50%);
+    pointer-events: none;
+}
+
+.selection:is(:hover,:focus){
+    border-color:var(--color-accent);
+    box-shadow:0 0 0 3px rgba(139,92,246,0.1);
+    outline:none;
+}
+
+.generate-btn{
+    padding: 0.7rem 2rem; 
+    font-size:1rem;
+    border: 1px solid var(--color-border);
+    border-radius:10px;
+    margin-left: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.generate-btn:disabled{
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.generate-btn:hover{
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* --------------Generated Images--------------*/
+
+.grid-gallery{
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));    
+}
+
+.grid-gallery :has(.img-card){
+    margin-top:1rem;
+}
+
+.grid-gallery .img-card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    transition:all 0.3s ease;
+}
+
+/*--> not operator used*/
+.grid-gallery .img-card:not(.loading-card):hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.grid-gallery .img-card .image-overlay{
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity: 0;
+    pointer-events: none;
+    padding:18px;
+    background:linear-gradient(transparent,rgba(0,0,0,0.8));
+    transition: all 0.3 ease;
+}
+
+.grid-gallery .img-card:hover .image-overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.grid-gallery .img-card .result-image{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* When loading is there we must take the picture off*/
+.grid-gallery .img-card.loading :is(.result-image,.image-overlay,.error-sign){
+    display:none;
+}
+
+.grid-gallery .img-card .image-overlay .download-button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:2.8125rem;
+    height: 2.8125rem; 
+    background:rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    color:#fff;
+    border: none;
+    border-radius: 50%;
+}
+
+.grid-gallery .img-card .image-overlay .download-button:hover{
+    transform:scale(1.05);
+    background:rgba(255, 255, 255, 0.4);
+    cursor:pointer;
+}
+
+.status-card{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------------------------*/
+.grid-gallery  .img-card.loading .status-card{
+    display:flex;
+}
+
+.status-card .loading-spin{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*When error is there modify loading ie remove spin and show error*/
+.grid-gallery .img-card.error :is(.result-image,.image-overlay,.loading-spin){
+    display:none;
+}
+
+.grid-gallery .img-card.error .status-card{
+    display:flex;
+}
+
+.grid-gallery .img-card .status-card .status-text{
+    padding:8px;
+    font-size:0.9rem;
+}
+
+.grid-gallery .img-card .status-card .error-sign{
+    font-size:1.75rem;
+    color:rgb(209, 43, 43);
+}
+
+
+@media (max-width: 64rem){
+    html{
+        font-size: 90%;
+    }
+}
+
+/* 774px */
+@media (max-width: 48.375rem){
+
+    .grid-gallery{
+        grid-template-columns: repeat(auto-fill,minmax(14.84rem,1fr));    
+    }
+    .generate-section{
+        grid-template-columns: 1.15fr;
+        gap:1.5rem;
+    }
+}
+
+@media (max-width:31.25rem){
+    html{
+        font-size:75%;
+    }
+}
+
+@media (max-width:26.5625rem){
+    html{
+        font-size:60%;
+    }
+}
